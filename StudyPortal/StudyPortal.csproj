@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201701151817529_added answer in mvc.Designer.cs">
       <DependentUpon>201701151817529_added answer in mvc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701170500599_added category in mvc.cs" />
+    <Compile Include="Migrations\201701170500599_added category in mvc.Designer.cs">
+      <DependentUpon>201701170500599_added category in mvc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Dbentity.cs" />
@@ -288,6 +292,7 @@
     <Content Include="Views\Mvc\Details.cshtml" />
     <Content Include="Views\Mvc\Edit.cshtml" />
     <Content Include="Views\Mvc\Index.cshtml" />
+    <Content Include="Views\Mvc\Introduction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -309,6 +314,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701151817529_added answer in mvc.resx">
       <DependentUpon>201701151817529_added answer in mvc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170500599_added category in mvc.resx">
+      <DependentUpon>201701170500599_added category in mvc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

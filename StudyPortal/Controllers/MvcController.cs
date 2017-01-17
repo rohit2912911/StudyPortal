@@ -20,6 +20,11 @@ namespace StudyPortal.Controllers
             return View(db.Mvc.ToList());
         }
 
+        public ActionResult Introduction()
+        {
+            return View(db.Mvc.ToList());
+        }
+
         // GET: Mvc/Details/5
         public ActionResult Details(int? id)
         {
@@ -46,7 +51,7 @@ namespace StudyPortal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MvcId,Question,OptionA,OptionB,OptionC,OptionD")] Mvc mvc)
+        public ActionResult Create([Bind(Include = "MvcId,Question,OptionA,OptionB,OptionC,OptionD,Answer,category")] Mvc mvc)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +83,7 @@ namespace StudyPortal.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MvcId,Question,OptionA,OptionB,OptionC,OptionD")] Mvc mvc)
+        public ActionResult Edit([Bind(Include = "MvcId,Question,OptionA,OptionB,OptionC,OptionD,Answer,category")] Mvc mvc)
         {
             if (ModelState.IsValid)
             {

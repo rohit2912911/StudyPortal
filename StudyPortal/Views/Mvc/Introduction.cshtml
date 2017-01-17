@@ -1,0 +1,87 @@
+﻿@model IEnumerable<StudyPortal.Models.Mvc>
+
+@{
+    ViewBag.Title = "Introduction";
+}
+
+<h2>Introduction</h2>
+
+                      <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+                      <script type="text/javascript">
+    $(document).ready(function () {
+        //$(".flip").click(function () {
+        //    $("#panel").slideToggle("slow");
+        //});
+
+        $('.flip').click(function () {
+            $(this).next('.panel').slideToggle();
+        });//var idCount = 1;
+        //$('div').each(function () {
+        //    $(this).attr('id', 'q' + idCount);
+        //    idCount++;
+        //});
+
+    });
+                      </script>
+                      <style>
+                          .question {
+                              width: 75%;
+                          }
+
+                          .Panel, .flip {
+                              padding: 5px;
+                              text-align: center;
+                              background-color: #e5eecc;
+                              border: solid 1px #c3c3c3;
+                          }
+
+                          .panel {
+                              padding: 50px;
+                              display: none;
+                          }
+
+                          .option {
+                          }
+                      </style>
+                      
+
+                      @{ int counter = 0;
+                      foreach (var item in Model) {
+                      <div class="container" style="margin-top:30px;margin-bottom:30px;border:groove">
+
+                          <div class="question">
+
+                              <b>@Html.DisplayNameFor(model => model.Question)</b> @(++counter) :   @Html.DisplayFor(modelItem => item.Question)
+
+                          </div>
+                          <div>
+
+                          </div>
+
+                          <div>
+                              <b> @Html.DisplayNameFor(model => model.OptionA)</b>  @Html.DisplayFor(modelItem => item.OptionA)
+                          </div>
+
+
+                          <div>
+                              <b>@Html.DisplayNameFor(model => model.OptionB) </b>  @Html.DisplayFor(modelItem => item.OptionB)
+                          </div>
+
+                          <div>
+                              <b> @Html.DisplayNameFor(model => model.OptionC) </b> @Html.DisplayFor(modelItem => item.OptionC)
+                          </div>
+
+                          <div>
+                              <b> @Html.DisplayNameFor(model => model.OptionD) </b> @Html.DisplayFor(modelItem => item.OptionD)
+                          </div>
+
+
+                          <div class="flip">
+                              View Answer
+                          </div>
+                          <div class="panel"> @Html.DisplayFor(modelItem => item.Answer)</div>
+
+                      </div>
+
+                      }
+                      }
