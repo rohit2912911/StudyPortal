@@ -77,6 +77,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -196,6 +204,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MvcController.cs" />
@@ -218,8 +227,18 @@
     <Compile Include="Migrations\201701170500599_added category in mvc.Designer.cs">
       <DependentUpon>201701170500599_added category in mvc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701171127598_added c class.cs" />
+    <Compile Include="Migrations\201701171127598_added c class.Designer.cs">
+      <DependentUpon>201701171127598_added c class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701171223320_change in model.cs" />
+    <Compile Include="Migrations\201701171223320_change in model.Designer.cs">
+      <DependentUpon>201701171223320_change in model.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\C.cs" />
+    <Compile Include="Models\CCategory.cs" />
     <Compile Include="Models\Dbentity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -230,6 +249,8 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -293,6 +314,13 @@
     <Content Include="Views\Mvc\Edit.cshtml" />
     <Content Include="Views\Mvc\Index.cshtml" />
     <Content Include="Views\Mvc\Introduction.cshtml" />
+    <Content Include="Views\C\Create.cshtml" />
+    <Content Include="Views\C\Delete.cshtml" />
+    <Content Include="Views\C\Details.cshtml" />
+    <Content Include="Views\C\Edit.cshtml" />
+    <Content Include="Views\C\Index.cshtml" />
+    <Content Include="Views\Mvc\test.cshtml" />
+    <Content Include="Views\C\Introduction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -317,6 +345,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701170500599_added category in mvc.resx">
       <DependentUpon>201701170500599_added category in mvc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701171127598_added c class.resx">
+      <DependentUpon>201701171127598_added c class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701171223320_change in model.resx">
+      <DependentUpon>201701171223320_change in model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

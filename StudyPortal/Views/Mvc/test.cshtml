@@ -1,0 +1,649 @@
+﻿
+@{
+    ViewBag.Title = "test";
+}
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="">
+    <link rel="canonical" href="https://www.geekyprep.com">
+    <title>Dashboard | GeekyPrep</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="https://www.geekyprep.com/static/favicon.png">
+
+    <!-- CSS-->
+    <link rel="stylesheet" media="screen,projection" href="https://www.geekyprep.com/static/materialize.min.css">
+    <link rel="stylesheet" media="screen,projection" href="https://www.geekyprep.com/static/sweetalert.css">
+    <link rel="stylesheet" media="screen,projection" href="/assets/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" media="screen,projection" href="https://www.geekyprep.com/static/joyride-2.1.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="GeekyPrep - Hub for Geeks. Join us, Prepare for Interviews, Get Hired. MCQs for C, JAVA, SQL, DS, UNIX, SALESFORCE etc., Interview Experiences, Puzzles, Design and HR questions at one single place.">
+    <meta name="keywords" content="interviewbit,geeksforgeeks,hackerearth,interviewstreet,hackerrank,geekyprep,geeky prep,interview preparation,coding interview preparation,technical interview preparation,hr interview questions,programming interview preparation,programming interview puzzles,java interview questions,c interview questions,multithreading interview questions,polymorphism interview questions,sql interview questions,salesforce interview questions,unix interview questions,abstraction interview questions,Inheritance interview questions,Unit testing interview questions,Design interview questions,Interview Experiences,Amazon interview questions,Google interview questions,Microsoft interview questions,Adobe interview questions,technical interview questions,coding interview questions">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta name="author" content="GeekyPrep">
+    <meta name="copyright" content="GeekyPrep Pvt. Ltd.">
+    <meta name="application-name" content="GeekyPrep">
+    <meta name="google-site-verification" content="">
+
+
+    <!-- Facebook -->
+    <meta house="og:title" content="GeekyPrep - Hub for Geeks. Join us, Prepare for Interviews, Get Hired!!">
+    <meta house="og:type" content="website">
+    <meta house="og:image" content="https://www.geekyprep.com/static/favicon.png">
+    <meta house="og:image:width" content="800">
+    <meta house="og:image:height" content="400">
+    <meta house="og:url" content="https://www.geekyprep.com/">
+    <meta house="og:description" content="GeekyPrep - Hub for Geeks. Join us, Prepare for Interviews, Get Hired!!">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="GeekyPrep - Hub for Geeks. Join us, Prepare for Interviews, Get Hired!!">
+    <meta name="twitter:description" content="GeekyPrep - Hub for Geeks. Join us, Prepare for Interviews, Get Hired!!">
+
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript">
+		if (window.location.protocol != "https:" && document.location.hostname != "localhost" && document.location.hostname != "geekypreplocal.com")
+		    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+    </script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-80052136-1', 'auto');
+  ga('send', 'pageview');
+
+    </script>
+</head><body class="no-select" oncontextmenu="return false">
+    <header class="navbar-fixed">
+        <nav class="top-nav">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+
+                        <li class="waves-effect waves-light"><a href="https://www.geekyprep.com/dashboard"><img class="geekyprep-logo" src="/assets/img/geekyprep_logo.png" alt="GeekyPrep logo"> <span class="beta">BETA</span></a></li>
+                        <li class="waves-effect waves-light dashboard active "><a href="https://www.geekyprep.com/dashboard" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Statistics and MCQ test arena" data-tooltip-id="90c91798-7f2d-9558-ba3c-51fc26aff57c">Dashboard</a></li>
+                        <li class="waves-effect waves-light"><a href="https://www.geekyprep.com/interviewexperiences" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Interview experiences" data-tooltip-id="5868e008-a193-ad15-e503-47a6fca360fa">Interviews</a></li>
+                        <li class="waves-effect waves-light"><a href="https://www.geekyprep.com/puzzle" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Technical interview puzzles with sample solutions" data-tooltip-id="22ae3182-80fe-c347-2628-360bccfe72ba">Puzzles</a></li>
+                        <li class="waves-effect waves-light"><a href="https://www.geekyprep.com/design" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Software design questions with sample solutions" data-tooltip-id="7a022b2c-0e20-5de3-2d0a-daf071674a21">Design</a></li>
+                        <li class="waves-effect waves-light"><a href="https://www.geekyprep.com/hr" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Frequently asked HR questions with sample answers" data-tooltip-id="c6034561-b237-bac4-ae79-c1b3ad0fe40b">HR</a></li>
+                        <li class="waves-effect waves-light"><a href="https://www.geekyprep.com/contribute" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Contribute MCQs or interview experiences and earn GeekyCoins" data-tooltip-id="6e15fc82-b9cb-acff-7b51-d81159fff720">Contribute</a></li>
+                        <li class="waves-effect waves-light"><a href="https://www.geekyprep.com/redeem" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Redeem GeekyCoins for goodies" data-tooltip-id="3491ee63-e08b-8c3c-dc61-07bb730b6512">Redeem</a></li>
+                        <li class="waves-effect waves-light" id="jobsTop"><a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Apply for jobs(coming soon)" data-tooltip-id="84c2774a-1423-a5b1-7edc-10f9491bd9d6">Jobs(Coming soon)</a></li>
+
+                    </ul>
+
+                    <div class="right hide-on-med-and-down" id="profile">
+                        <a href="#" class="gp-currency">
+                            <img src="https://www.geekyprep.com/static/geekyprep_coin_small.png" alt="Geekyprep Coin" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="GeekyCoins" data-tooltip-id="8299385b-82c4-3fc8-a021-22e2144fe291"> 0
+                        </a>
+                        <a class="profile-dropdown-btn" href="#" data-activates="profile-dropdown">
+
+                            <img src="https://lh6.googleusercontent.com/-rDcAcqYmw7I/AAAAAAAAAAI/AAAAAAAAAGE/VayVMPEYcK4/s96-c/photo.jpg" alt="" class="circle responsive-img">
+
+                        </a><ul id="profile-dropdown" class="dropdown-content">
+                            <li><a style="cursor: default;"><i class="material-icons">sentiment_satisfied</i><label style="color: teal;font-size: 15px;font-style: italic;"> Rohit</label></a></li>
+                            <li class="divider"></li>
+                            <li class="divider"></li>
+                            <li class="divider"></li>
+                            <li class="divider"></li>
+                            <li><a href="https://www.geekyprep.com/profile"><i class="material-icons">account_circle</i> Profile</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/refer"><i class="material-icons">card_giftcard</i> Referral</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/logout"><i class="material-icons">exit_to_app</i> Logout</a></li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="preloader" style="display: none;">
+            <div class="lines">
+                <div class="line line-1"></div>
+                <div class="line line-2"></div>
+                <div class="line line-3"></div>
+            </div>
+            <div class="loading-text">LOADING</div>
+        </div>
+        <div class="container" style="display: block;">
+            <div class="row">
+                <div class="col s12 m4 l3">
+                    <div class="nav-panel" id="left-nav">
+                        <div class="no-padding">
+                            <ul class="collapsible">
+                                <li class="bold"><a class="collapsible-header waves-effect waves-light subject" id="jAVA">JAVA</a><div class="collapsible-body" style=""><ul><li id="11" class="topic"><a href="#">Java Fundamentals</a></li><li id="12" class="topic"><a href="#">Multithreading</a></li><li id="13" class="topic"><a href="#">OOPS</a></li><li id="15" class="topic"><a href="#">Exception Handling</a></li><li id="18" class="topic"><a href="#">Generics And Collections</a></li></ul></div></li>
+                                <li class="bold active"><a class="collapsible-header waves-effect waves-light subject active" id="c">C</a><div class="collapsible-body" style="display: block;"><ul><li id="21" class="topic active"><a href="#">C Fundamentals</a></li><li id="22" class="topic"><a href="#">Pointers</a></li></ul></div></li>
+                                <li class="bold"><a class="collapsible-header waves-effect waves-light subject" id="unix">Unix</a><div class="collapsible-body" style=""><ul><li id="31" class="topic"><a href="#">File Management</a></li><li id="32" class="topic"><a href="#">Process Management</a></li></ul></div></li>
+                                <li class="bold"><a class="collapsible-header waves-effect waves-light subject" id="sQL">SQL</a><div class="collapsible-body" style=""><ul><li id="41" class="topic"><a href="#">SQL Fundamentals</a></li></ul></div></li>
+                                <li class="bold"><a class="collapsible-header waves-effect waves-light subject" id="dSAndAlgorithms">DS And Algorithms</a><div class="collapsible-body" style=""><ul><li id="61" class="topic"><a href="#">Algorithms</a></li><li id="62" class="topic"><a href="#">Basic Structures</a></li><li id="65" class="topic"><a href="#">Tree And Graph</a></li></ul></div></li>
+                                <li class="bold"><a class="collapsible-header waves-effect waves-light subject" id="salesforce">Salesforce</a><div class="collapsible-body" style=""><ul><li id="51" class="topic"><a href="#">SF Fundamentals</a></li><li id="52" class="topic"><a href="#">Apex Visualforce</a></li><li id="53" class="topic"><a href="#">Configuration</a></li><li id="55" class="topic"><a href="#">Lightning</a></li></ul></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="dashboard" class="col s8" style="display: none;">
+                    <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                    <div class="row" id="noDashboardData" style="display: none;">
+                        <div class="col s12">
+                            <div class="error-box-internal">
+                                <span class="error-internal">Start answering questions in the left pane to populate your progress like below.</span>
+                            </div>
+                            <br>
+                            <img src="https://www.geekyprep.com/static/sampleData.png" height="80%" width="80%" alt="" class="Sample Data">
+                        </div>
+                    </div>
+
+                    <canvas id="dashboardProgressPiechart" width="848" height="424" style="width: 848px; height: 424px;"></canvas>
+                    <div id="subject-progress">
+                        <p class="col s6 m4 l4"></p>
+                        <p class="col s6 m4 l4 left-align">Weak</p>
+                        <p class="col s6 m4 l4 right-align">Strong</p>
+
+                        <div id="subjectProgress"><div class="col s6 m4 l4">JAVA</div><div class="col s6 m8 l8"><div class="progress"><div class="determinate" style="width: 0%"></div></div></div><div class="col s6 m4 l4">C</div><div class="col s6 m8 l8"><div class="progress"><div class="determinate" style="width: 0.8666666666666667%"></div></div></div><div class="col s6 m4 l4">Unix</div><div class="col s6 m8 l8"><div class="progress"><div class="determinate" style="width: 0%"></div></div></div><div class="col s6 m4 l4">SQL</div><div class="col s6 m8 l8"><div class="progress"><div class="determinate" style="width: 0%"></div></div></div><div class="col s6 m4 l4">DS And Algorithms</div><div class="col s6 m8 l8"><div class="progress"><div class="determinate" style="width: 0%"></div></div></div><div class="col s6 m4 l4">Salesforce</div><div class="col s6 m8 l8"><div class="progress"><div class="determinate" style="width: 0%"></div></div></div></div>
+                    </div>
+                </div>
+
+
+                <div id="subject" class="col s8" style="display: none;">
+                    <iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                    <div id="steps" class="subjectSteps">
+                        <div class="step active" data-desc="Level 1">1</div>
+                        <div class="step" data-desc="Level 2">2</div>
+                        <div class="step" data-desc="Level 3">3</div>
+                        <div class="step" data-desc="Level 4">4</div>
+                        <div class="step" data-desc="Level 5">5</div>
+                    </div>
+
+                    <div class="row" id="noSubjectData" style="display: none;">
+                        <div class="col s12">
+                            <div class="error-box-internal">
+                                <span class="error-internal">Start answering questions to populate your statistics and progress.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <canvas id="subjectProgressPiechart" width="848" height="424" style="width: 848px; height: 424px; display: block;"></canvas>
+
+                    <div id="topic-progress" style="display: block;">
+                        <p class="col s6 m4 l4"></p>
+                        <p class="col s6 m4 l4 left-align">Weak</p>
+                        <p class="col s6 m4 l4 right-align">Strong</p>
+
+                        <div id="topicProgress">
+
+
+                            <div class="col s6 m4 l4">Pointers</div><div class="col s6 m8 l8"><div class="progress"><div class="determinate" style="width: 0%"></div></div></div><div class="col s6 m4 l4">C Fundamentals</div><div class="col s6 m8 l8"><div class="progress"><div class="determinate" style="width: 1.7333333333333334%"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="topic" class="col s8" style="display: none;">
+                    <div id="steps">
+                        <div class="step active" data-desc="Level 1">1</div>
+                        <div class="step" data-desc="Level 2">2</div>
+                        <div class="step" data-desc="Level 3">3</div>
+                        <div class="step" data-desc="Level 4">4</div>
+                        <div class="step" data-desc="Level 5">5</div>
+                    </div>
+
+                    <a class="waves-effect waves-light btn" href="#" id="topicTest">Start Test</a>
+                </div>
+
+
+                <div id="test-arena" class="col s8 offset-s1" style="display: block;">
+                    <div id="score" class="col s2 left-align">
+                        <p class="score-text">Score</p>
+                        <p class="btn-floating" id="score-value">14</p>
+                    </div>
+                    <div id="progress" class="col s4">
+                        <div class="progress-text col s3">Accuracy</div>
+                        <div id="power-gauge" class="col s9"><svg class="gauge" width="300" height="300"><g class="arc" transform="translate(75,75)"><path fill="rgb(172, 236, 230)" d="M-55,-6.735557395310443e-15A55,55,0,0,1,-44.49593469062211,-32.32818887608603L4.045084971874736,2.9389262614623664Z"></path><path fill="rgb(122, 231, 223)" d="M-44.49593469062211,-32.32818887608603A55,55,0,0,1,-16.995934690622104,-52.30810839623345L1.5450849718747368,4.755282581475768Z"></path><path fill="rgb(68, 230, 220)" d="M-16.995934690622104,-52.30810839623345A55,55,0,0,1,16.99593469062212,-52.30810839623344L-1.5450849718747384,4.755282581475767Z"></path><path fill="rgb(20, 223, 214)" d="M16.99593469062212,-52.30810839623344A55,55,0,0,1,44.49593469062211,-32.328188876086024L-4.045084971874737,2.938926261462366Z"></path><path fill="rgb(9, 180, 174)" d="M44.49593469062211,-32.328188876086024A55,55,0,0,1,55,0L-5,0Z"></path></g><g class="label" transform="translate(75,75)"><text transform="rotate(-90) translate(0,-65)">0.00000</text><text transform="rotate(-54) translate(0,-65)">20.0000</text><text transform="rotate(-18) translate(0,-65)">40.0000</text><text transform="rotate(18) translate(0,-65)">60.0000</text><text transform="rotate(54) translate(0,-65)">80.0000</text><text transform="rotate(90) translate(0,-65)">100.000</text></g><g class="pointer" transform="translate(75,75)"><path d="M5,0C3.333333333333333,-34,1.6666666666666667,-68,0,-68C-1.6666666666666667,-68,-3.333333333333333,0,-5,0C-3.333333333333333,0,-1.6666666666666667,5,0,5C1.6666666666666667,5,3.333333333333333,2.5,5,0" transform="rotate(34.61399841308594)"></path></g></svg></div>
+                    </div>
+                    <div id="progress" class="col s6">
+                        <div class="col s4 progress-text">Level Progress</div>
+                        <div class="col s8 progress-value">
+                            <div class="progress"><div class="determinate" style="width: 28%;"></div></div>
+                        </div>
+                    </div>
+                    <div class="row" id="noTestData" style="display: none;">
+                        <div class="col s12">
+                            <div class="error-box-internal">
+                                <span class="error-internal">No more questions available for this level for this topic. Please check back soon. </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="question" class="col s12 wow zoomIn" style="visibility: visible; animation-name: zoomIn; display: block;">
+                        <form action="#">
+                            <div class="question-text">
+                                <pre>Which of the following is not a valid C variable name?
+) </pre>
+                            </div>
+                            <div class="question-option" id="option1" style="pointer-events: none;">
+                                <label for="question-option1">
+                                    <input name="question" type="radio" id="question-option1">
+                                    <pre class="option-text">int number;</pre>
+                                </label>
+                            </div>
+                            <div class="question-option" id="option2" style="pointer-events: none;">
+                                <label for="question-option2">
+                                    <input name="question" type="radio" id="question-option2">
+                                    <pre class="option-text">float rate;</pre>
+                                </label>
+                            </div>
+                            <div class="question-option" id="option3" style="pointer-events: none;">
+                                <label for="question-option3">
+                                    <input name="question" type="radio" id="question-option3">
+                                    <pre class="option-text">int _count;</pre>
+                                </label>
+                            </div>
+                            <div class="question-option isCorrect" id="option4" style="pointer-events: none;">
+                                <label for="question-option4">
+                                    <input name="question" type="radio" id="question-option4" checked="checked">
+                                    <pre class="option-text">int $main;</pre>
+                                </label>
+                                <i class="material-icons" style="line-height: 46px">check</i>
+                            </div>
+                            <button class="btn waves-effect waves-light" type="button" name="action" id="question-submit" style="display: none;">
+                                Submit <i class="material-icons right">send</i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div id="answer" class="col s12 mt-30 animated zoomIn" style="display: block;">
+                        <div class="card-panel z-depth-1 hoverable">
+                            <div class="row">
+                                <div id="explanation" class="col s12">
+                                    <pre class="black-text white-space-pre-wrap">Explanation: Since only underscore and no other special character is allowed in a variable name, it results in an error.</pre>
+                                </div>
+                                <div id="stats" class="col s12">
+                                    <p>Percentage users correct/incorrect:</p>
+                                    <div id="correct" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Percentage of users answered it correctly" data-tooltip-id="e6289dd4-99ec-0eea-d0ba-286894e39647" style="position: relative;"><svg viewBox="0 0 100 100" style="display: block; width: 100%;"><path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#eee" stroke-width="4" fill-opacity="0"></path><path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#66BB6A" stroke-width="4" fill="none" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 25.4391;"></path></svg><div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(102, 187, 106);">92% Correct</div></div>
+                                    <div id="wrong" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Percentage of users answered it incorrectly" data-tooltip-id="20e3d035-7871-3759-502c-77759cb94547" style="position: relative;"><svg viewBox="0 0 100 100" style="display: block; width: 100%;"><path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#eee" stroke-width="4" fill-opacity="0"></path><path d="M 50,50 m 0,-48 a 48,48 0 1 1 0,96 a 48,48 0 1 1 0,-96" stroke="#EF5350" stroke-width="4" fill="none" style="stroke-dasharray: 301.635, 301.635; stroke-dashoffset: 276.196;"></path></svg><div class="progressbar-text" style="position: absolute; left: 50%; top: 50%; padding: 0px; margin: 0px; transform: translate(-50%, -50%); color: rgb(239, 83, 80);">8% Wrong</div></div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--<div class="nextQuestionButton">
+                            <a class="next" href="#" id="nextQuestion">
+                                <span class="icon-wrap">
+                                    <svg class="icon" width="50" height="50" viewBox="0 0 64 64">
+                                        <path d="M37.333 10.667q1.125 0 1.896 0.771l18.667 18.667q0.771 0.771 0.771 1.896t-0.771 1.896l-18.667 18.667q-0.771 0.771-1.896 0.771-1.146 0-1.906-0.76t-0.76-1.906q0-1.125 0.771-1.896l14.125-14.104h-41.563q-1.104 0-1.885-0.781t-0.781-1.885 0.781-1.885 1.885-0.781h41.563l-14.125-14.104q-0.771-0.771-0.771-1.896 0-1.146 0.76-1.906t1.906-0.76z" />
+                                    </svg>
+                                </span>
+                                <h3>Next Question</h3>
+                            </a>
+                        </div>-->
+                        <button class="btn waves-effect waves-light mt-30" type="button" name="action" id="nextQuestion">
+                            Next <i class="material-icons right">send</i>
+                        </button>
+
+                        <a href="javascript: void(0);" class="right" id="questionFeedback">Answer feedback/suggestion?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <div class="row center-align">
+                <div class="col s12 footer-menu white-text">
+                    <a class="white-text" href="https://www.geekyprep.com/aboutus">About Us</a> |
+                    <a class="white-text" href="https://www.geekyprep.com/faq">FAQ</a> |
+                    <a class="white-text" href="https://www.geekyprep.com/privacy">Privacy Policy</a> |
+                    <a class="white-text" href="https://www.geekyprep.com/termsofservice">Terms &amp; Conditions</a> |
+                    <a class="white-text modal-trigger" href="javascript:void(0)" onclick="openContact();">Contact Us</a>
+                </div>
+                <div class="col s12 footer-social-icons">
+                    <a href="https://www.facebook.com/GeekyPrepcom-1554054218257597/" target="_blank" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Facebook" data-tooltip-id="13833760-1a94-50f5-044d-74892248b843">
+                        <img src="https://www.geekyprep.com/static/facebook.png" alt="" class="facebook">
+                    </a>
+                    <a href="https://twitter.com/geekyprep" target="_blank" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Twitter" data-tooltip-id="03496754-4e5a-97c5-e37a-b88cf46b293d">
+                        <img src="https://www.geekyprep.com/static/twitter.png" alt="" class="twitter">
+                    </a>
+                    <a href="https://plus.google.com/107699145146443121296/posts/p/pub" target="_blank" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Google Plus" data-tooltip-id="16dd4fb7-9a96-3f75-1953-769f661fe935">
+                        <img src="https://www.geekyprep.com/static/google.png" alt="" class="google">
+                    </a>
+                    <a href="https://www.linkedin.com/company/geekyprep.com" class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="LinkedIn" data-tooltip-id="3aba02f3-f963-73c3-a07e-f0c8c9b7cb08">
+                        <img src="https://www.geekyprep.com/static/linkedin.png" alt="" class="linkedin">
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright center-align">
+            <div class="container">© 2017 Geekyprep.com. All rights reserved.</div>
+        </div>
+    </footer>
+    <script type="text/javascript">
+  function openContact()
+  {
+	  $('#contactModal').openModal();
+  }
+    </script>
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <h4>Contact us</h4>
+            <form id="contactForm">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="contactName" name="contactName" type="text" required="required"> <label for="contactName">Name</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="contactEmail" name="contactEmail" type="email" required="required"> <label for="contactEmail">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="contactMessage" class="materialize-textarea" name="contactMessage" required="required"></textarea>
+                        <label for="contactMessage">Message</label>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn modal-action modal-close waves-effect waves-green btn-flat" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="https://www.geekyprep.com/static/materialize.min.js"></script>
+    <script src="https://www.geekyprep.com/static/jquery.redirect.min.js" type="text/javascript"></script>
+    <script src="https://www.geekyprep.com/static/progressbar.min.js" type="text/javascript"></script>
+    <script src="https://www.geekyprep.com/static/underscore.min.js" type="text/javascript"></script>
+    <script src="https://www.geekyprep.com/static/chart.min.js" type="text/javascript"></script>
+    <script src="https://www.geekyprep.com/static/sweetalert.min.js" type="text/javascript"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://www.geekyprep.com/static/d3.layout.js" type="text/javascript"></script>
+    <!-- script src="https://www.geekyprep.com/static/d3.min.js" type="text/javascript"></script> -->
+    <script src="https://www.geekyprep.com/static/d3-selection-multi.v1.min.js" type="text/javascript"></script>
+    <script src="https://www.geekyprep.com/static/d3-bar-chart.js" type="text/javascript"></script>
+    <script src="/assets/javascripts/dashboard.js" type="text/javascript"></script>
+    <script src="https://www.geekyprep.com/static/wow.min.js" type="text/javascript"></script>
+    <script src="/assets/javascripts/loaderDashboard.js" type="text/javascript"></script>
+    <script src="/assets/javascripts/mainpageutils.js" type="text/javascript"></script>
+    <script src="/assets/javascripts/sendMessage.js" type="text/javascript"></script>
+    <script src="/assets/javascripts/Util.js" type="text/javascript"></script>
+    <script src="/assets/javascripts/updatePassword.js" type="text/javascript"></script>
+    <script src="/assets/javascripts/updateName.js" type="text/javascript"></script>
+
+    <script src="https://www.geekyprep.com/static/gauge.js" type="text/javascript"></script>
+    <script src="https://www.geekyprep.com/static/jquery.joyride-2.1.js" type="text/javascript"></script>
+    <script>
+              new WOW().init();
+    </script>
+    <div id="wait" style="display: none; position: absolute; top: 40%; left: 40%; padding: 2px;"><img src="https://www.geekyprep.com/static/loading.gif" width="300px" height="300px"></div>
+    <div id="updatePasswordModal" class="modal" style="width: 500px">
+        <div class="modal-content">
+            <h4>Update password</h4>
+            <form id="updatePasswordForm">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="profileOldPassword" name="profileOldPassword" type="password" required="" aria-required="true">
+                        <label for="profileOldPassword">Old Password</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="profileNewPassword" name="profileNewPassword" type="password" required="" aria-required="true">
+                        <label for="profileNewPassword">New Password</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="profileConfirmPassword" name="profileConfirmPassword" type="password" required="" aria-required="true">
+                        <label for="profileConfirmPassword">Confirm Password</label>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn modal-action modal-close waves-effect waves-green btn-flat" onclick="update_password()">Update</button>
+        </div>
+    </div>
+    <div id="updateNameModal" class="modal" style="width: 500px">
+        <div class="modal-content">
+            <h5>Name not found from your account. Please enter your name.</h5>
+            <form id="updateNameForm">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="firstName" name="firstName" required="" type="text" aria-required="true">
+                        <label for="firstName">First Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="lastName" name="lastName" required="" type="text" aria-required="true">
+                        <label for="lastName">Last Name</label>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn modal-action modal-close waves-effect waves-green btn-flat" onclick="update_name()">Submit</button>
+        </div>
+    </div>
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                Error! Please try again. Contact us if problem persists.
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn modal-action modal-close waves-effect waves-green btn-flat">OK</button>
+        </div>
+    </div>
+    <div id="passwordUpdatedModal" class="modal" style="width: 400px">
+        <div class="modal-content">
+            <h6>Password Updated</h6>
+        </div>
+        <div class="modal-footer">
+            <button class="btn modal-action modal-close waves-effect waves-green btn-flat" onclick="closeUpdate()">OK</button>
+        </div>
+    </div>
+    <div id="passwordFailedModal" class="modal" style="width: 400px">
+        <div class="modal-content">
+            <h6>Password Update Failed</h6>
+        </div>
+        <div class="modal-footer">
+            <button class="btn modal-action modal-close waves-effect waves-green btn-flat" onclick="closeUpdate()">OK</button>
+        </div>
+    </div>
+    <div id="messageSentModal" class="modal" style="width: 400px">
+        <div class="modal-content">
+            <div class="row">
+                Thanks for your message. We will get back to you shortly.
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn modal-action modal-close waves-effect waves-green btn-flat">OK</button>
+        </div>
+    </div>
+    <script>
+$(document).ready(function(){
+
+	if(0 && 0 == "1")
+		$('#updatePasswordModal').openModal({
+			  dismissible: false
+		  });
+
+});
+    </script>
+    <script>
+$(document).ready(function(){
+
+	if(0 && 0 == "1")
+		$('#updateNameModal').openModal({
+			  dismissible: false
+		  });
+
+});
+    </script>
+    <ol id="chooseID" style="display: none">
+        <li data-button="Start">
+            <p>Hello Rohit! Welcome to GeekyPrep.<br> We will walk you through the features of the website in this small tutorial.</p>
+        </li>
+        <li data-id="dashboardTop" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
+            <h3>Dashboard</h3>
+            <p>Main Dashboard showing score distribution, subject wise progress and MCQ test arena.</p>
+        </li>
+        <li data-id="interviewTop" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
+            <h3>Interview Experiences</h3>
+            <p>
+                Interview Experiences of various positions in top companies
+            </p>
+        </li>
+        <li data-id="puzzleTop" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
+            <h3>Puzzles</h3>
+            <p>
+                Technical interview puzzles with sample solutions
+            </p>
+        </li>
+        <li data-id="puzzleTop" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
+            <h3>Puzzles</h3>
+            <p>
+                Technical interview puzzles with sample solutions
+            </p>
+        </li>
+        <li data-id="designTop" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
+            <h3>Design Questions</h3>
+            <p>Software design questions with sample solutions</p>
+        </li>
+        <li data-id="hrTop" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
+            <h3>HR Questions</h3>
+            <p>Frequently asked HR questions with sample answers</p>
+        </li>
+        <li data-id="contributeTop" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
+            <h3>Contribute Content</h3>
+            <p>Contribute MCQs or interview experiences and earn GeekyCoins</p>
+        </li>
+        <li data-id="redeemTop" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
+            <h3>Redeem GeekyCoins</h3>
+            <p>Redeem GeekyCoins for goodies like T-shirts, Mugs, Subscription etc.</p>
+        </li>
+        <!--       <li data-id="profile" data-button="Next" data-options="tipLocation:bottom;tipAnimation:fade">
+                <h3>GeekyCoins</h3>
+                <p>GeekyCoins balance</p>
+              </li> -->
+        <li data-id="left-nav" data-button="Next" data-options="tipLocation:right;tipAnimation:fade">
+            <h3>Subject and Topics</h3>
+            <p>Select a subject and topic from here to start answering MCQs. We will be introducing more subjects with time such as Scala, JavaScript, Ruby etc.</p>
+        </li>
+        <li data-id="dashboard" data-button="Finish" data-options="tipLocation:left;tipAnimation:fade">
+            <h3>Score Distribution</h3>
+            <p>This area shows the distribution of score and progress across subjects and topics.  We will be integrating more statistics such as rankings and more performance graphs soon.</p>
+        </li>
+    </ol>
+    <script>
+$(window).load(function() {
+  	if(1 && 1 == "1")
+		{
+  $("#chooseID").joyride({
+      autoStart : true,
+      postStepCallback : function (index, tip) {
+      if (index == 2) {
+        $(this).joyride('set_li', false, 1);
+      }
+    },
+    modal:true,
+    expose: true
+  });
+		}
+});
+    </script>
+
+
+    <div class="material-tooltip" id="90c91798-7f2d-9558-ba3c-51fc26aff57c" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none; left: 200.219px; top: 69px;"><span>Statistics and MCQ test arena</span><div class="backdrop" style="opacity: 0; transform: scaleX(1) scaleY(1); display: none; top: 0px; left: 0px; margin-left: 113px;"></div></div><div class="material-tooltip" id="5868e008-a193-ad15-e503-47a6fca360fa" style="display: none; left: 339.234px; top: 69px; margin-top: 0px; margin-left: 0px; opacity: 0;"><span>Interview experiences</span><div class="backdrop" style="top: 0px; left: 0px; margin-left: 84.5px; display: none; opacity: 0; transform: scaleX(1) scaleY(1);"></div></div><div class="material-tooltip" id="22ae3182-80fe-c347-2628-360bccfe72ba" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none;"><span>Technical interview puzzles with sample solutions</span><div class="backdrop" style="opacity: 0; transform: scaleX(1) scaleY(1); display: none;"></div></div><div class="material-tooltip" id="7a022b2c-0e20-5de3-2d0a-daf071674a21" style="display: none; left: 419.75px; top: 69px; margin-top: 0px; margin-left: 0px; opacity: 0;"><span>Software design questions with sample solutions</span><div class="backdrop" style="top: 0px; left: 0px; margin-left: 186.5px; display: none; opacity: 0; transform: scaleX(1) scaleY(1);"></div></div><div class="material-tooltip" id="c6034561-b237-bac4-ae79-c1b3ad0fe40b" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none;"><span>Frequently asked HR questions with sample answers</span><div class="backdrop" style="opacity: 0; transform: scaleX(1) scaleY(1); display: none;"></div></div><div class="material-tooltip" id="6e15fc82-b9cb-acff-7b51-d81159fff720" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none;"><span>Contribute MCQs or interview experiences and earn GeekyCoins</span><div class="backdrop" style="opacity: 0; transform: scaleX(1) scaleY(1); display: none;"></div></div><div class="material-tooltip" id="3491ee63-e08b-8c3c-dc61-07bb730b6512" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none;"><span>Redeem GeekyCoins for goodies</span><div class="backdrop" style="opacity: 0; transform: scaleX(1) scaleY(1); display: none;"></div></div><div class="material-tooltip" id="84c2774a-1423-a5b1-7edc-10f9491bd9d6" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none; left: 886.391px; top: 69px;"><span>Apply for jobs(coming soon)</span><div class="backdrop" style="opacity: 0; transform: scaleX(1) scaleY(1); display: none; top: 0px; left: 0px; margin-left: 107.5px;"></div></div><div class="material-tooltip" id="8299385b-82c4-3fc8-a021-22e2144fe291" style="display: none; left: 1129.22px; top: 52px; margin-top: 0px; margin-left: 0px; opacity: 0;"><span>GeekyCoins</span><div class="backdrop" style="top: 0px; left: 0px; margin-left: 45.5px; display: none; opacity: 0; transform: scaleX(1) scaleY(1);"></div></div><div class="material-tooltip" id="e6289dd4-99ec-0eea-d0ba-286894e39647"><span>Percentage of users answered it correctly</span><div class="backdrop"></div></div><div class="material-tooltip" id="20e3d035-7871-3759-502c-77759cb94547"><span>Percentage of users answered it incorrectly</span><div class="backdrop"></div></div><div class="material-tooltip" id="13833760-1a94-50f5-044d-74892248b843"><span>Facebook</span><div class="backdrop"></div></div><div class="material-tooltip" id="03496754-4e5a-97c5-e37a-b88cf46b293d" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none;"><span>Twitter</span><div class="backdrop" style="opacity: 0; transform: scaleX(1) scaleY(1); display: none;"></div></div><div class="material-tooltip" id="16dd4fb7-9a96-3f75-1953-769f661fe935" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none;"><span>Google Plus</span><div class="backdrop" style="opacity: 0; transform: scaleX(1) scaleY(1); display: none;"></div></div><div class="material-tooltip" id="3aba02f3-f963-73c3-a07e-f0c8c9b7cb08" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none;"><span>LinkedIn</span><div class="backdrop" style="opacity: 0; transform: scaleX(1) scaleY(1); display: none;"></div></div><div class="hiddendiv common"></div><div class="joyride-tip-guide" data-index="0" style="visibility: visible; display: none; top: 259.5px; left: 524.5px;"><span class="joyride-nub" style="display: none;"></span><div class="joyride-content-wrapper" role="dialog"><p>Hello Rohit! Welcome to GeekyPrep.<br> We will walk you through the features of the website in this small tutorial.</p><a href="#" class="joyride-next-tip">Start</a><a href="#close" class="joyride-close-tip">X</a></div></div><div class="joyride-tip-guide" data-index="1">
+        <span class="joyride-nub"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>Dashboard</h3>
+            <p>Main Dashboard showing score distribution, subject wise progress and MCQ test arena.</p><a href="#" class="joyride-next-tip">Next</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-tip-guide" data-index="2">
+        <span class="joyride-nub"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>Interview Experiences</h3>
+            <p>
+                Interview Experiences of various positions in top companies
+            </p><a href="#" class="joyride-next-tip">Next</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-tip-guide" data-index="3">
+        <span class="joyride-nub"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>Puzzles</h3>
+            <p>
+                Technical interview puzzles with sample solutions
+            </p><a href="#" class="joyride-next-tip">Next</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-tip-guide" data-index="4">
+        <span class="joyride-nub"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>Puzzles</h3>
+            <p>
+                Technical interview puzzles with sample solutions
+            </p><a href="#" class="joyride-next-tip">Next</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-tip-guide" data-index="5">
+        <span class="joyride-nub"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>Design Questions</h3>
+            <p>Software design questions with sample solutions</p><a href="#" class="joyride-next-tip">Next</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-tip-guide" data-index="6">
+        <span class="joyride-nub"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>HR Questions</h3>
+            <p>Frequently asked HR questions with sample answers</p><a href="#" class="joyride-next-tip">Next</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-tip-guide" data-index="7">
+        <span class="joyride-nub"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>Contribute Content</h3>
+            <p>Contribute MCQs or interview experiences and earn GeekyCoins</p><a href="#" class="joyride-next-tip">Next</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-tip-guide" data-index="8">
+        <span class="joyride-nub"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>Redeem GeekyCoins</h3>
+            <p>Redeem GeekyCoins for goodies like T-shirts, Mugs, Subscription etc.</p><a href="#" class="joyride-next-tip">Next</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-tip-guide" data-index="9" style="visibility: visible; display: none; top: 114px; left: 322.719px;">
+        <span class="joyride-nub left"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>Subject and Topics</h3>
+            <p>Select a subject and topic from here to start answering MCQs. We will be introducing more subjects with time such as Scala, JavaScript, Ruby etc.</p><a href="#" class="joyride-next-tip">Next</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-tip-guide" data-index="10">
+        <span class="joyride-nub"></span><div class="joyride-content-wrapper" role="dialog">
+            <h3>Score Distribution</h3>
+            <p>This area shows the distribution of score and progress across subjects and topics.  We will be integrating more statistics such as rankings and more performance graphs soon.</p><a href="#" class="joyride-next-tip">Finish</a><a href="#close" class="joyride-close-tip">X</a>
+        </div>
+    </div><div class="joyride-modal-bg" style="display: none;"></div>
+</body>
+</html>
+

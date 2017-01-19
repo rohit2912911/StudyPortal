@@ -8,126 +8,119 @@ using System.Web;
 using System.Web.Mvc;
 using StudyPortal.Models;
 using PagedList;
-using System.Web.UI;
-
 namespace StudyPortal.Controllers
 {
-    public class MvcController : Controller
+    public class CController : Controller
     {
         private Dbentity db = new Dbentity();
 
-        // GET: Mvc
+        // GET: C
         public ActionResult Index()
         {
-            return View(db.Mvc.ToList());
+            return View(db.DbC.ToList());
         }
 
-        public ActionResult Introduction(int page=1)
+        public ActionResult Introduction(int page = 1)
         {
-            
-            return View(db.Mvc.OrderBy(x=>x.MvcId).ToPagedList(page,3));
+
+            return View(db.DbC.OrderBy(x => x.CId).ToPagedList(page, 3));
         }
 
-        
-        // GET: Mvc/Details/5
+        // GET: C/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Mvc mvc = db.Mvc.Find(id);
-            if (mvc == null)
+            C c = db.DbC.Find(id);
+            if (c == null)
             {
                 return HttpNotFound();
             }
-            return View(mvc);
+            return View(c);
         }
 
-        // GET: Mvc/Create
+        // GET: C/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Mvc/Create
+        // POST: C/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "MvcId,Question,OptionA,OptionB,OptionC,OptionD,Answer,category")] Mvc mvc)
+        public ActionResult Create([Bind(Include = "CId,Question,OptionA,OptionB,OptionC,OptionD,Answer,category")] C c)
         {
             if (ModelState.IsValid)
             {
-                db.Mvc.Add(mvc);
+                db.DbC.Add(c);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(mvc);
+            return View(c);
         }
 
-        // GET: Mvc/Edit/5
+        // GET: C/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Mvc mvc = db.Mvc.Find(id);
-            if (mvc == null)
+            C c = db.DbC.Find(id);
+            if (c == null)
             {
                 return HttpNotFound();
             }
-            return View(mvc);
+            return View(c);
         }
 
-        // POST: Mvc/Edit/5
+        // POST: C/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "MvcId,Question,OptionA,OptionB,OptionC,OptionD,Answer,category")] Mvc mvc)
+        public ActionResult Edit([Bind(Include = "CId,Question,OptionA,OptionB,OptionC,OptionD,Answer,category")] C c)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(mvc).State = EntityState.Modified;
+                db.Entry(c).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(mvc);
+            return View(c);
         }
 
-        // GET: Mvc/Delete/5
+        // GET: C/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Mvc mvc = db.Mvc.Find(id);
-            if (mvc == null)
+            C c = db.DbC.Find(id);
+            if (c == null)
             {
                 return HttpNotFound();
             }
-            return View(mvc);
+            return View(c);
         }
 
-        // POST: Mvc/Delete/5
+        // POST: C/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Mvc mvc = db.Mvc.Find(id);
-            db.Mvc.Remove(mvc);
+            C c = db.DbC.Find(id);
+            db.DbC.Remove(c);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult test()
-        {
-            return View();
-        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

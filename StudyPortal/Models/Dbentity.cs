@@ -10,5 +10,8 @@ namespace StudyPortal.Models
 
     {
         public DbSet<Mvc> Mvc { get; set; }
+        public DbSet<C> DbC { get; set; }
+        public DbSet<CCategory> DbCCategory { get; set; }
+
     }
 }
